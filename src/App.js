@@ -38,7 +38,7 @@ class App extends Component {
 
   handleKeyPress = (e) => {
     // 눌려진 키가 Enter 면 handleCreate 호출
-    this.handleCreate();
+    // this.handleCreate();
 
     if(e.key === 'Enter'){
       this.handleCreate();
@@ -46,7 +46,7 @@ class App extends Component {
   }
 
   render(){
-    const { input } = this.state;
+    const { input, todos } = this.state;
     const {
       handleChange,
       handleCreate,
@@ -62,7 +62,7 @@ class App extends Component {
           onCreate={handleCreate}
         />
       )}>
-        <TodoItemList/>
+        <TodoItemList todos={todos} />
       </TodoListTemplate>
     );
   }
